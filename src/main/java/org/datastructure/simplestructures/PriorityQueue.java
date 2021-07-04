@@ -1,4 +1,4 @@
-package org.intelligentjava.algos.simplestructures;
+package org.datastructure.simplestructures;
 
 
 import org.datastructure.trees.utils.ArrayUtils;

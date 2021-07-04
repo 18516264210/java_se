@@ -1,8 +1,8 @@
 package org.algorithm.simplestructures;
 
+import org.datastructure.simplestructures.LinkedList;
 import org.junit.Assert;
 import org.junit.Test;
-import org.intelligentjava.algos.simplestructures.LinkedList;
 
 
 /**

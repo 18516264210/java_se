@@ -1,4 +1,4 @@
-package org.intelligentjava.algos.simplestructures;
+package org.datastructure.simplestructures;
 
 /**
  * Standard simple non circular doubly linked Linked List implementation.
@@ -7,7 +7,6 @@ package org.intelligentjava.algos.simplestructures;
  * @created May 4, 2011
  *
  */
-// TODO iterator
 public class LinkedList {
     
     private Entry head;
