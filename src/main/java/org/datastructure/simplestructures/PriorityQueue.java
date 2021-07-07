@@ -18,12 +18,17 @@ public class PriorityQueue {
     private int heapSize = 0;
 
     public PriorityQueue() {
+        //初始容量
         heap = new int[100];
     }
 
+    //1
     public void insertElement(int element) {
+        //heapSize=10
         heapSize++;
+        //heap[10]=0
         heap[heapSize - 1] = Integer.MIN_VALUE;
+        //10，1
         changeElementValue(heapSize - 1, element);
     }
 
