@@ -2,19 +2,17 @@ package org.algorithm;
 
 /**
  * 求最长公共字串
- *
+ * <p>
  * 什么是动态规划？
  * 简单个人理解，就是记录之前的结果，然后在之前的结果之上进行迭代
- *
  */
 public class Longest_common_substring {
 
-
     public static void main(String[] args) {
-        String a = "";
-        String b = "";
+        String a = "abcdefeef";
+        String b = "bcdef";
         Longest_common_substring longest_common_substring = new Longest_common_substring();
-        int i = longest_common_substring.longest_1(a, b);
+        System.out.println(longest_common_substring.longest_3(a, b));
     }
 
     /**
@@ -52,8 +50,8 @@ public class Longest_common_substring {
      * 使用空间换时间复杂度，将转换为二位素组，对角线连续最长的值就是最大的公共子串<p/>
      * 参考：https://www.cnblogs.com/fanguangdexiaoyuer/p/11281179.html
      *
-     * @param a
-     * @param b
+     * @param s
+     * @param t
      * @return
      */
     private int longest_2(String s, String t) {
@@ -75,4 +73,21 @@ public class Longest_common_substring {
         return result;
     }
 
+    private int longest_3(String s, String t) {
+        if (s == null || t == null) {
+            return 0;
+        }
+        int max = 0;
+        //为什么数组的长度要+1
+        int[][] dp = new int[s.length() + 1][t.length() + 1];
+        for (int i = 1; i <= s.length(); i++) {
+            for (int j = 1; j <= t.length(); j++) {
+                if (s.charAt(i - 1) == t.charAt(j - 1)) {
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
+                    max = Math.max(max, dp[i][j]);
+                }
+            }
+        }
+        return max;
+    }
 }
